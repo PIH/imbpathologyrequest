@@ -12,9 +12,9 @@
 	<url>https://wiki.openmrs.org/x/FQ4z</url>
 
 	<scm>
-		<connection>scm:git:git@github.com:openmrs/openmrs-module-imbpathologyrequest.git</connection>
-		<developerConnection>scm:git:git@github.com:openmrs/openmrs-module-imbpathologyrequest.git</developerConnection>
-		<url>https://github.com/openmrs/openmrs-module-imbpathologyrequest/</url>
+		<developerConnection>scm:git:https://github.com/PIH/openmrs-module-imbpathologyrequest</developerConnection>
+		<url>https://github.com/PIH/openmrs-module-imbpathologyrequest</url>
+		<tag>HEAD</tag>
 	</scm>
 
 	<modules>
@@ -29,19 +29,6 @@
 
 	<dependencyManagement>
 		<dependencies>
-			<!--
-			Libraries from lib to add as dependencies with compile or runtime scope:
-			lib/iText-5.0.5.jar
-
-			Find matching dependencies in maven central repository.
-			<dependency>
-				<groupId>org.other.library</groupId>
-				<artifactId>library-name</artifactId>
-				<version>library.version</version>
-				<scope>compile</scope>
-			</dependency>
-			-->
-
 			<dependency>
 				<groupId>org.openmrs.api</groupId>
 				<artifactId>openmrs-api</artifactId>
@@ -70,23 +57,6 @@
 		</dependencies>
 	</dependencyManagement>
 
-
-
-	<!--<profiles>
-		<profile>
-			<id>1.9</id>
-			<properties>
-				<openMRSVersion>1.9.11</openMRSVersion>
-			</properties>
-		</profile>
-		<profile>
-			<id>1.11</id>
-			<properties>
-				<openMRSVersion>1.11.5</openMRSVersion>
-			</properties>
-		</profile>
-	</profiles>
--->
 	<build>
 		<pluginManagement>
 			<plugins>
@@ -107,21 +77,35 @@
 		</pluginManagement>
 	</build>
 
+	<distributionManagement>
+		<repository>
+			<id>openmrs-repo-modules-pih</id>
+			<name>OpenMRS PIH Modules</name>
+			<url>https://openmrs.jfrog.io/artifactory/modules-pih/</url>
+		</repository>
+		<snapshotRepository>
+			<id>openmrs-repo-modules-pih-snapshots</id>
+			<name>OpenMRS PIH Module Snapshots</name>
+			<url>https://openmrs.jfrog.io/artifactory/modules-pih-snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
 	<repositories>
 		<repository>
 			<id>openmrs-repo</id>
 			<name>OpenMRS Nexus Repository</name>
-			<url>http://mavenrepo.openmrs.org/nexus/content/repositories/public</url>
+			<url>https://openmrs.jfrog.io/artifactory/public/</url>
 		</repository>
 	</repositories>
+
 
 	<pluginRepositories>
 		<pluginRepository>
 			<id>openmrs-repo</id>
 			<name>OpenMRS Nexus Repository</name>
-			<url>http://mavenrepo.openmrs.org/nexus/content/repositories/public</url>
+			<url>https://openmrs.jfrog.io/artifactory/public/</url>
 			<snapshots>
-				<enabled>false</enabled>
+				<enabled>true</enabled>
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
