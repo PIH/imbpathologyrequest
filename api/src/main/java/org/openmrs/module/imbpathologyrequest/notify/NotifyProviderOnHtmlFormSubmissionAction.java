@@ -44,13 +44,7 @@ public class NotifyProviderOnHtmlFormSubmissionAction implements CustomFormSubmi
 		List<Provider> providers = Context.getProviderService().getAllProviders(true);
 		List<String> providersEmails = new ArrayList<String>();
 		for (Provider provider : providers) {
-			//if (provider.getPerson()!=null)
-			/*System.out.println("Provider Name"+provider.getPerson().getFamilyName()+"(ID:"+provider.getPerson()+")");
-			System.out.println("111111111111111111111"+provider.getPerson().getAttribute("Health Center"));
-			System.out.println("222222222222222222222"+session.getSubmissionActions().getCurrentPerson().getAttribute("Health Center"));
-			System.out.println("333333333333333333333"+provider.getPerson().getAttribute("Health Center").getValue());
-			System.out.println("444444444444444444444"+session.getSubmissionActions().getCurrentPerson().getAttribute("Health Center").getValue());
-*/
+
 			if (provider.getPerson()!=null)
 			if (provider.getPerson().getAttribute("Health Center")!=null)
 			if (provider.getPerson().getAttribute("Health Center")!=null &&
