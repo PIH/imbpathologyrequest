@@ -113,10 +113,10 @@ public class NotifyProviderOnHtmlFormSubmissionAction implements CustomFormSubmi
 
 				// Set Subject: header field
 				message.setSubject(familyName + "'s pathology results");
-
+				String pathologyServeUrl=Context.getAdministrationService().getGlobalProperty("imbpathologyrequest.urlForServer");
 				// Now set the actual message
 				message.setText("The pathology results from Butaro Hospital for " + familyName + " " + givenName
-						+ " are now available. Please log on to https://butaro-oncology.pih-emr.org/openmrs/patientDashboard.form?patientId="+patientId);
+						+ " are now available. Please log on to "+pathologyServeUrl+"/patientDashboard.form?patientId="+patientId);
 
 				System.out.println("sending...");
 				// Send message

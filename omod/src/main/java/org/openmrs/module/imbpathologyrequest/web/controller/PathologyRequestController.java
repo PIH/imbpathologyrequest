@@ -23,7 +23,7 @@ public class PathologyRequestController {
 
     @RequestMapping(value = "/module/imbpathologyrequest/linkToPathologyReport", method = RequestMethod.GET)
     public ModelAndView goToPathologyReport() {
-        String projectUrl=Context.getAdministrationService().getGlobalProperty("imbpathologyrequest.ulrForPathologyReport");
+        String projectUrl=Context.getAdministrationService().getGlobalProperty("imbpathologyrequest.urlForPathologyReport");
         return new ModelAndView("redirect:" + projectUrl);
     }
 

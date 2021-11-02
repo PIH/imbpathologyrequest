@@ -59,13 +59,19 @@
 		</description>
 	</globalProperty>
 	<globalProperty>
-		<property>imbpathologyrequest.ulrForPathologyReport</property>
-		<defaultValue>https://butaro-oncology.pih-emr.org/openmrs</defaultValue>
+		<property>imbpathologyrequest.urlForPathologyReport</property>
+		<defaultValue>/spa/pathology</defaultValue>
 		<description>
 			Micro front end link to Pathology report
 		</description>
 	</globalProperty>
-
+	<globalProperty>
+		<property>imbpathologyrequest.urlForServer</property>
+		<defaultValue>https://butaro-oncology.pih-emr.org/openmrs</defaultValue>
+		<description>
+			Server url to be used in sending email to clinicians
+		</description>
+	</globalProperty>
 
 
 	<!-- AOP
