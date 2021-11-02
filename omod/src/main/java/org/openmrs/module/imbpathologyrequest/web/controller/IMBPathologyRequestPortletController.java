@@ -2,6 +2,7 @@ package org.openmrs.module.imbpathologyrequest.web.controller;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.openmrs.Encounter;
 import org.openmrs.Form;
 import org.openmrs.Person;
 import org.openmrs.api.context.Context;
@@ -27,8 +28,10 @@ public class IMBPathologyRequestPortletController extends PortletController {
 	@SuppressWarnings("unchecked")
 	@Override
 	protected void populateModel(HttpServletRequest request, Map<String, Object> model) {
-		Person person = (Person)model.get("patient");
-				//(Person) model.get("person");
+		//Person person = (Person)model.get("patient");
+		int patientId=(Integer) model.get("patientId");
+		Person person=(Person) Context.getPatientService().getPatient(patientId);
+
 		if (person == null)
 			throw new IllegalArgumentException("This portlet may only be used in the context of a Person");
 		
@@ -58,6 +61,17 @@ public class IMBPathologyRequestPortletController extends PortletController {
 			}
 		}
 model.put("pathologyhtmlForms",pathologyHtmlforms);
+
+		List<Encounter> encounters=Context.getEncounterService().getEncountersByPatientId(patientId);
+		List<Encounter> pathologyEncounters=new ArrayList<Encounter>();
+		for (Encounter enc:encounters) {
+			if (enc.getEncounterType().getEncounterTypeId() == pathologyEncounterType){
+				pathologyEncounters.add(enc);
+			}
+
+		}
+		model.put("pathologyEncounters",pathologyEncounters);
+
 		if (log.isDebugEnabled())
 			log.debug("In PortletControllerUtil....");
 		
