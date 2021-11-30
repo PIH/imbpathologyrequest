@@ -56,8 +56,10 @@ public class IMBPathologyRequestPortletController extends PortletController {
 		List<HtmlForm> pathologyHtmlforms=new ArrayList<HtmlForm>();
 		int pathologyEncounterType=Integer.parseInt(Context.getAdministrationService().getGlobalProperty("imbpathologyrequest.pathologyEncounterType"));
 		for (HtmlForm htmlForm:allHtmlforms) {
-			if (htmlForm.getForm().getEncounterType().getEncounterTypeId()==pathologyEncounterType){
-				pathologyHtmlforms.add(htmlForm);
+			if (htmlForm.getForm().getEncounterType() != null) {
+				if (htmlForm.getForm().getEncounterType().getEncounterTypeId() == pathologyEncounterType) {
+					pathologyHtmlforms.add(htmlForm);
+				}
 			}
 		}
 model.put("pathologyhtmlForms",pathologyHtmlforms);
