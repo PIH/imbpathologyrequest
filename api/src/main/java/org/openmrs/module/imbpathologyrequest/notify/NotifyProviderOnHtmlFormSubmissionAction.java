@@ -106,8 +106,8 @@ public class NotifyProviderOnHtmlFormSubmissionAction implements CustomFormSubmi
 					Session sessionObject = Session.getInstance(properties, new Authenticator() {
 
 						protected PasswordAuthentication getPasswordAuthentication() {
-
-							return new PasswordAuthentication("butaro.pathology@gmail.com", "Pathology@3utaro");
+							//return new PasswordAuthentication("butaro.pathology@gmail.com", "Pathology@3utaro");
+							return new PasswordAuthentication("butaro.pathology@gmail.com", "lccosubwttxgkgop");
 
 						}
 

@@ -26,5 +26,10 @@ public class PathologyRequestController {
         String projectUrl=Context.getAdministrationService().getGlobalProperty("imbpathologyrequest.urlForPathologyReport");
         return new ModelAndView("redirect:" + projectUrl);
     }
+    @RequestMapping(value = "/module/imbpathologyrequest/linkToOncologSearchPatient", method = RequestMethod.GET)
+    public ModelAndView goToOncologyDashboard() {
+        String projectUrl=Context.getAdministrationService().getGlobalProperty("oncologySearchPatient.url");
+        return new ModelAndView("redirect:" + projectUrl);
+    }
 
 }

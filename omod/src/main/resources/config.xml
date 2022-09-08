@@ -72,6 +72,13 @@
 			Server url to be used in sending email to clinicians
 		</description>
 	</globalProperty>
+	<globalProperty>
+		<property>oncologySearchPatient.url</property>
+		<defaultValue>https://butaro-oncology.pih-emr.org/openmrs</defaultValue>
+		<description>
+			Server url to be used in accessing Oncology Search Patient (openmrs 3.0)
+		</description>
+	</globalProperty>
 
 
 	<!-- AOP

@@ -44,6 +44,7 @@ public class AdminList extends AdministrationSectionExt {
 		
 		//map.put("module/imbpathologyrequest/imbpathologyrequest.form", "imbpathologyrequest.report");
 		map.put("module/imbpathologyrequest/linkToPathologyReport.form", "imbpathologyrequest.reportReact");
+		map.put("module/imbpathologyrequest/linkToOncologSearchPatient.form", "imbpathologyrequest.oncologySearchPatient");
 
 		return map;
 	}
